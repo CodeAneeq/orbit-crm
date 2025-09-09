@@ -76,8 +76,12 @@ const Clients = () => {
           Authorization: `Bearer ${token}`
         }
       });
-      setClients(data.data.data.filter((item) => item.assignedTo !== user._id));
-      setUnAssignClients(data.data.data.filter((item) => item.assignedTo == user._id));
+      if (role == "manager") {
+        setClients(data.data.data.filter((item) => item.assignedTo !== user._id));
+        setUnAssignClients(data.data.data.filter((item) => item.assignedTo == user._id));
+      } else {
+        setClients(data.data.data);
+      }
       setLoading(false);
     } catch (error) {
       setShowToster(true);

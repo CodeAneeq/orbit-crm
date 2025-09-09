@@ -88,7 +88,12 @@ const Leads = () => {
           Authorization: `Bearer ${token}`
         }
       });
-      setLeads(data.data.data.filter(item => item.assignedTo !== user._id));
+      if (role == "manager") {
+        setLeads(data.data.data.filter((item) => item.assignedTo !== user._id));
+        setUnAssignLeads(data.data.data.filter((item) => item.assignedTo == user._id));
+      } else {
+        setLeads(data.data.data);
+      }
       setUnAssignLeads(data.data.data.filter(item => item.assignedTo == user._id));
       setLoading(false);
     } catch (error) {

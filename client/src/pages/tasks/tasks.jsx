@@ -110,8 +110,12 @@ const Tasks = () => {
         }
       });
       if (data.data.status == "success") {
-        setTasks(data.data.data.filter(item => item.assignedTo !== user._id));
-        setUnAssignTasks(data.data.data.filter(item => item.assignedTo == user._id));
+        if (role == "manager") {
+        setTasks(data.data.data.filter((item) => item.assignedTo !== user._id));
+        setUnAssignTasks(data.data.data.filter((item) => item.assignedTo == user._id));
+      } else {
+        setTasks(data.data.data);
+      }
       }
       setLoading(false);
     } catch (error) {

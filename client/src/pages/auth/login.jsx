@@ -28,7 +28,11 @@ const Login = () => {
       if (res.data.status === "success") {
         localStorage.setItem("token", res.data.data.token);
         dispatch(addUser(res.data.data));
-        navigate('/dashboard');
+        if (res.data.data.role == "admin" && "manager") {
+          navigate('/dashboard');
+        } else {
+          navigate('/leads');
+        }
       } else {
         setAuthError("Invalid login attempt. Please try again.");
       }
