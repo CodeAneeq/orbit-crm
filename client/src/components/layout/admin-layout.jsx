@@ -13,7 +13,7 @@ const AdminLayout = ({children}) => {
       </div>
       <div className='flex gap-10 min-h-screen'>
         <div className={`max-md:${isOpen ? "block" : "hidden"}`}>
-          <Sidebar></Sidebar>
+          {/* <Sidebar></Sidebar> */}
         </div>
         <div className='flex-1 max-md:px-5 pl-80 max-md:pl-5'>
           {children}
