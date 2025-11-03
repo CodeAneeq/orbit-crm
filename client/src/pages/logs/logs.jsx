@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminLayout from '../../components/layout/admin-layout'
+import AdminLayout from '../components/layout/admin-layout'
 import LogCard from '../../components/cards/log-card'
 import { useState } from 'react'
 import { useEffect } from 'react'
@@ -59,5 +59,6 @@ const Logs = () => {
         </AdminLayout>
     )
 }
+
 
 export default Logs
