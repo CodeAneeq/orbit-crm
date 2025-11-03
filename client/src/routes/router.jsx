@@ -20,7 +20,7 @@ const AssignClientPage = lazy(()=> import("../pages/assign-client/assign-client"
 const DepartmentsPage = lazy(()=> import("../pages/departments/departments"));
 const AssignLeadPage = lazy(()=> import("../pages/assign-lead/assign-lead"));
 const AssignTaskPage = lazy(()=> import("../pages/assign-task/assign-task"));
-const LogsPage = lazy(()=> import("../pages/logs/logs"));
+const LogsPage = lazy(()=> import("../pages/logs/logs.jsx"));
 const NotificationsPage = lazy(()=> import("../pages/notifications/notifications"));
 
 export const publicRoutes = createBrowserRouter([
